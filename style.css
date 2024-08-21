@@ -11,12 +11,12 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    font-family: Arial
+    font-family: Arial;
+    color: #252323;
 }
 
 header{
     background-color: #DAD2BC;
-    color: #252323;
     padding: 15px 80px;
     text-align: center;
     font-size: 2rem;
@@ -29,7 +29,7 @@ header{
     position: relative;
     width: 80px;
     font-size: 2rem;
-    background-color: #70798C;
+    background-color: #252323;
     color: #F5F1ED;
     border: none;
     border-radius: 5px;
@@ -76,8 +76,8 @@ header{
     z-index: 1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* transform: scale(0); */
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .3s;
 
     background-color:#efece2;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.318);
@@ -85,6 +85,10 @@ header{
     display: flex;
     font-size: 2em;
     border-radius: 15px;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-header{
@@ -115,7 +119,7 @@ header{
     border:2px solid #555;
 }
 .form-checkbox input:checked{
-    background-color: #009bf4;
+    background-color: #70798C;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,4 +150,14 @@ header{
     border-radius: 10px;
     background-color: #252323;
     color: #F5F1ED;
+}
+
+#close-modal{
+    transition: transform .3s;
+}
+
+#close-modal:hover{
+    transform: scale(1.2);
+    color: rgb(255, 45, 45);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.312);
 }
