@@ -37,6 +37,7 @@ header{
 }
 
 .add-button:hover{
+    outline: none;
     transform: scale(1.1);
     box-shadow: 3px 3px 5px #00000067;
 }
@@ -70,6 +71,49 @@ header{
     width: 512px;
 } */
 
-::backdrop{
-    backdrop-filter: blur(15px);
+.modal{
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: scale(0); */
+
+    background-color:#F5F1ED;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.318);
+    padding: 15px;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.form-element{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-element input{
+    width: 200px;
+}
+
+.add-book-form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.add-book-form button{
+    font-size: 1.2rem;
 }
