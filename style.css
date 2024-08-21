@@ -33,6 +33,12 @@ header{
     color: #F5F1ED;
     border: none;
     border-radius: 5px;
+    transition: transform .3s;
+}
+
+.add-button:hover{
+    transform: scale(1.1);
+    box-shadow: 3px 3px 5px #00000067;
 }
 
 .books{
