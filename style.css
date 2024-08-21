@@ -16,13 +16,54 @@ body{
 
 header{
     background-color: #DAD2BC;
-    padding: 15px;
+    color: #252323;
+    padding: 15px 80px;
     text-align: center;
     font-size: 2rem;
     flex: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-button{
+    position: relative;
+    width: 80px;
+    font-size: 2rem;
+    background-color: #70798C;
+    color: #F5F1ED;
+    border: none;
+    border-radius: 5px;
 }
 
 .books{
     background-color: #F5F1ED;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-books{
+    font-size: 4rem;
+    min-width: 80px;
+}
+
+/* .no-books{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 80px;
+    font-size: 3rem;
+    color: #a4a4a4;
+} */
+/* 
+.add-icon{
+    filter: brightness(0) saturate(100%) invert(73%) sepia(7%) saturate(9%) hue-rotate(314deg) brightness(89%) contrast(88%);
+    width: 512px;
+} */
+
+::backdrop{
+    backdrop-filter: blur(15px);
 }
