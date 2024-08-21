@@ -79,11 +79,12 @@ header{
     transform: translate(-50%, -50%);
     /* transform: scale(0); */
 
-    background-color:#F5F1ED;
+    background-color:#efece2;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.318);
     padding: 15px;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 2em;
+    border-radius: 15px;
 }
 
 .modal-header{
@@ -104,16 +105,45 @@ header{
     gap: 10px;
 }
 
+.form-checkbox input{
+    appearance: none;
+    -webkit-appearance: none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+.form-checkbox input:checked{
+    background-color: #009bf4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-checkbox input:checked::after{
+    content: "✔";
+    color: white;
+    font-size: 1.5rem;
+}
+
 .form-element input{
-    width: 200px;
+    width: 220px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px inset rgb(170, 169, 169);
 }
 
 .add-book-form{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .add-book-form button{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #252323;
+    color: #F5F1ED;
 }
