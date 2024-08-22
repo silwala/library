@@ -3,7 +3,7 @@ const myLibrary = [];
 const modal = document.querySelector("#modal");
 const modalContainer = document.querySelector("#modal-container")
 const addButton = document.querySelector("#add-button");
-const closeModal = document.querySelector("#close-modal")
+const closeModalBtn = document.querySelector("#close-modal")
 const overlay = document.querySelector("#overlay")
 const library = document.querySelector("#library")
 const bookAddButton = document.querySelector("#form-add-button")
@@ -18,10 +18,7 @@ addButton.addEventListener("click", () =>{
     overlay.classList.add("active");
 })
 
-closeModal.addEventListener("click", () => {
-    modal.classList.remove("active");
-    overlay.classList.remove("active");
-})
+closeModalBtn.addEventListener("click", closeModal)
 
 modalContainer.addEventListener("click", (e) => {
     if(e.target === overlay){
@@ -38,6 +35,8 @@ bookAddButton.addEventListener("click", (e) => {
     read = (userRead.value === "on") ? true : false;
 
     addBookToLibrary(new Book(title, author, pages, read))
+
+    closeModal();
 })
 
 function Book(title, author, pages, read){
@@ -53,3 +52,15 @@ function addBookToLibrary(book){
     console.log(myLibrary);
 }
 
+function closeModal(){
+    resetForm();
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+function resetForm(){
+    userAuthor.value = "";
+    userTitle.value = "";
+    userPages.value = "";
+    userRead.checked = false;
+}
