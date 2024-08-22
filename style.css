@@ -148,7 +148,7 @@ header{
 }
 
 .form-element input{
-    width: 220px;
+    max-width: 220px;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 3px inset rgb(170, 169, 169);
