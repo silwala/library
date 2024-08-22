@@ -1,6 +1,7 @@
 const myLibrary = [];
 
 const modal = document.querySelector("#modal");
+const modalContainer = document.querySelector("#modal-container")
 const addButton = document.querySelector("#add-button");
 const closeModal = document.querySelector("#close-modal")
 const overlay = document.querySelector("#overlay")
@@ -16,6 +17,12 @@ closeModal.addEventListener("click", () => {
     overlay.classList.remove("active");
 })
 
+modalContainer.addEventListener("click", (e) => {
+    if(e.target === overlay){
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+})
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -24,7 +31,7 @@ function Book(title, author, pages, read){
 }
 
 
-function addBookToLibrary(){
+function addBookToLibrary(book){
 
 }
 
