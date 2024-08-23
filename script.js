@@ -19,6 +19,11 @@ addButton.addEventListener("click", () =>{
 })
 
 closeModalBtn.addEventListener("click", closeModal)
+document.addEventListener("keydown",  (e) => {
+    if(e.key === "Escape" && modal.classList.contains("active")){
+        closeModal();
+    }
+})
 
 modalContainer.addEventListener("click", (e) => {
     if(e.target === overlay){
@@ -29,14 +34,16 @@ modalContainer.addEventListener("click", (e) => {
 
 bookAddButton.addEventListener("click", (e) => {
     e.preventDefault();
-    title = userTitle.value;
-    author = userAuthor.value;
-    pages = userPages.value;
-    read = (userRead.value === "on") ? true : false;
-
-    addBookToLibrary(new Book(title, author, pages, read))
-
-    closeModal();
+    if(!checkEmpty()){
+        title = userTitle.value;
+        author = userAuthor.value;
+        pages = userPages.value;
+        read = (userRead.value === "on") ? true : false;
+    
+        addBookToLibrary(new Book(title, author, pages, read))
+    
+        closeModal();
+    }
 })
 
 function Book(title, author, pages, read){
@@ -63,4 +70,11 @@ function resetForm(){
     userTitle.value = "";
     userPages.value = "";
     userRead.checked = false;
+}
+
+function checkEmpty(){
+    if(userTitle.value.trim = ""){
+        userTitle.style.border = "1px solid red";
+        return false
+    }
 }

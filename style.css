@@ -34,6 +34,7 @@ header{
 }
 
 .add-button{
+    position: relative;
     width: 80px;
     font-size: 2rem;
     background-color: #252323;
@@ -42,11 +43,28 @@ header{
     border-radius: 5px;
     transition: transform .3s;
 }
+.add-button::before{
+    position: absolute;
+    border-radius: 40px;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #ffffff11;
+    height: 100%;
+    width: 100%;
+    scale: 0;
+    transition: .3s;
+}
 
 .add-button:hover{
     outline: none;
     transform: scale(1.1);
     box-shadow: 3px 3px 5px #00000067;
+}
+
+.add-button:active::before{
+    scale: 1;
+    border-radius: 5px;
 }
 
 .books{
@@ -148,7 +166,7 @@ header{
 }
 
 .form-element input{
-    width: 220px;
+    max-width: 220px;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 3px inset rgb(170, 169, 169);
