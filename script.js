@@ -2,6 +2,7 @@ const myLibrary = [];
 
 const modal = document.querySelector("#modal");
 const modalContainer = document.querySelector("#modal-container")
+const errMsg = document.querySelector("#err-msg")
 const addButton = document.querySelector("#add-button");
 const closeModalBtn = document.querySelector("#close-modal")
 const overlay = document.querySelector("#overlay")
@@ -34,7 +35,8 @@ modalContainer.addEventListener("click", (e) => {
 
 bookAddButton.addEventListener("click", (e) => {
     e.preventDefault();
-    if(!checkEmpty()){
+    resetErr();
+    if(!formElementEmpty()){
         title = userTitle.value;
         author = userAuthor.value;
         pages = userPages.value;
@@ -44,6 +46,7 @@ bookAddButton.addEventListener("click", (e) => {
     
         closeModal();
     }
+    
 })
 
 function Book(title, author, pages, read){
@@ -61,6 +64,7 @@ function addBookToLibrary(book){
 
 function closeModal(){
     resetForm();
+    resetErr();
     modal.classList.remove("active");
     overlay.classList.remove("active");
 }
@@ -71,10 +75,30 @@ function resetForm(){
     userPages.value = "";
     userRead.checked = false;
 }
+function resetErr(){
+    errMsg.textContent = "";
+    userTitle.style.outline = "none";
+    userAuthor.style.outline = "none";
+    userPages.style.outline = "none";
+}
 
-function checkEmpty(){
-    if(userTitle.value.trim = ""){
-        userTitle.style.border = "1px solid red";
-        return false
+function formElementEmpty(){
+    console.log("formElementCheck")
+    console.log(userTitle.value.trim())
+    if(userTitle.value.trim() === ""){
+        errMsg.textContent = "Title cannot be empty"
+        userTitle.style.outline = "2px solid #ff2d2d";
+        return true;
     }
+    else if(userAuthor.value.trim() === ""){
+        errMsg.textContent = "Author cannot be empty";
+        userAuthor.style.outline = "2px solid #ff2d2d";
+        return true;
+    }
+    else if(userPages.value.trim() === ""){
+        errMsg.textContent = "Pages cannot be empty"
+        userPages.style.outline = "2px solid #ff2d2d";
+        return true;
+    }
+    return false;
 }
