@@ -74,7 +74,7 @@ header{
 }
 
 .book-card{
-    flex: 1 0 min(350px, 80vw);
+    flex: 1 0 min(350px, 70vw);
     background-color: #DAD2BC;
     display: flex;
     flex-direction: column;
