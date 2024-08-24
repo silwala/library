@@ -14,6 +14,8 @@ const userAuthor = document.querySelector("#author");
 const userPages = document.querySelector("#pages");
 const userRead = document.querySelector("#read");
 
+const books = document.querySelector("#books");
+
 addButton.addEventListener("click", () =>{
     modal.classList.add("active");
     overlay.classList.add("active");
@@ -59,7 +61,7 @@ function Book(title, author, pages, read){
 
 function addBookToLibrary(book){
     myLibrary.push(book);
-    console.log(myLibrary);
+    addBookToPage(book);
 }
 
 function closeModal(){
@@ -101,4 +103,11 @@ function formElementEmpty(){
         return true;
     }
     return false;
+}
+
+function addBookToPage(book){
+    bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    books.appendChild(bookCard);
+    bookCard.textContent = `${book.title} + ${book.author} + ${ book.pages} + ${book.read} `;
 }
