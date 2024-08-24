@@ -109,5 +109,16 @@ function addBookToPage(book){
     bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
     books.appendChild(bookCard);
-    bookCard.textContent = `${book.title} + ${book.author} + ${ book.pages} + ${book.read} `;
+    
+    bookTitle = document.createElement("p");
+    bookAuthor = document.createElement("p");
+    bookPages = document.createElement("p");
+    bookTitle.classList.add("book-title");
+    bookAuthor.classList.add("book-author");
+    bookPages.classList.add("book-pages");
+    bookCard.append(bookTitle, bookAuthor, bookPages)
+
+    bookTitle.textContent = `Title: ${book.title}`;
+    bookAuthor.textContent = `Author: ${book.author}`;
+    bookPages.textContent = `pages: ${book.pages}`;
 }

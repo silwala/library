@@ -70,8 +70,6 @@ header{
     background-color: #F5F1ED;
     flex: 1 1 80px;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .add-books{
