@@ -102,10 +102,7 @@ header{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.318);
     padding: 15px;
     display: flex;
-<<<<<<< HEAD
     font-size: 2rem;
-=======
->>>>>>> 5cb781bf1698ddfbf6dd09ef0a69aaecc14e395a
     border-radius: 15px;
     height: fit-content;
     max-height: 80vh;
