@@ -121,4 +121,9 @@ function addBookToPage(book){
     bookTitle.textContent = `Title: ${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
     bookPages.textContent = `pages: ${book.pages}`;
+
+    readButton = document.createElement("button");
+    readButton.textContent = "Read";
+    readButton.classList.add("read-button");
+    bookCard.appendChild(readButton);
 }
