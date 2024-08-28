@@ -42,7 +42,8 @@ bookAddButton.addEventListener("click", (e) => {
         title = userTitle.value;
         author = userAuthor.value;
         pages = userPages.value;
-        read = (userRead.value === "on") ? true : false;
+        read = userRead.checked;
+        console.log(read)
     
         addBookToLibrary(new Book(title, author, pages, read))
     
@@ -123,9 +124,18 @@ function addBookToPage(book){
     bookPages.textContent = `pages: ${book.pages}`;
 
     readButton = document.createElement("button");
-    readButton.textContent = "Read";
     readButton.classList.add("read-button");
-    bookCard.appendChild(readButton);
+    console.log(book.read)
+    if(book.read === true){
+        console.log(book.read);
+        readButton.textContent = "Read";
+        readButton.classList.add("book-read");
+    }else{
+        console.log(book.read);
+        readButton.textContent = "Not Read";
+        readButton.classList.add("not-read");
+    }
+    bookCard.appendChild(readButton)
 
     removeButton = document.createElement("button");
     removeButton.textContent = "Remove";

@@ -188,7 +188,7 @@ header{
 
 #close-modal:hover{
     transform: scale(1.2);
-    color: rgb(255, 45, 45);
+    color: #ff2d2d;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.312);
 }
 
@@ -218,4 +218,30 @@ header{
     color: red;
     font-size: 1rem;
     padding-bottom: 15px;
+}
+
+.remove-button, .read-button{
+    color: #F5F1ED;
+    width: min(450px, 100%);
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.remove-button{
+    background-color: #70798C;
+    transition: .3s;
+}
+.remove-button:hover{
+    background-color: #8c97b0;
+    transform: scale(1.1);
+}
+
+.book-read{
+    background-color: rgb(0, 204, 0);
+}
+.not-read{
+    background-color: #cf0000;
 }
