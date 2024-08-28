@@ -136,7 +136,7 @@ function addBookToPage(book){
         readButton.classList.add("not-read");
     }
     bookCard.appendChild(readButton)
-    readButton.addEventListener("click", () => changeReadStatus(readButton));
+    readButton.addEventListener("click", (e) => changeReadStatus(e));
 
     removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
@@ -144,15 +144,15 @@ function addBookToPage(book){
     bookCard.appendChild(removeButton);
 }
 
-function changeReadStatus(readButton){
-    if(readButton.classList.contains("book-read")){
-        readButton.classList.add("not-read");
-        readButton.classList.remove("book-read");
-        readButton.textContent = "Not Read";
+function changeReadStatus(e){
+    if(e.target.classList.contains("book-read")){
+        e.target.classList.add("not-read");
+        e.target.classList.remove("book-read");
+        e.target.textContent = "Not Read";
     }
     else{
-        readButton.classList.add("book-read");
-        readButton.classList.remove("not-read");
-        readButton.textContent = "Read";
+        e.target.classList.add("book-read");
+        e.target.classList.remove("not-read");
+        e.target.textContent = "Read";
     }
 }
