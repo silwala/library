@@ -126,4 +126,9 @@ function addBookToPage(book){
     readButton.textContent = "Read";
     readButton.classList.add("read-button");
     bookCard.appendChild(readButton);
+
+    removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("remove-button");
+    bookCard.appendChild(removeButton);
 }
