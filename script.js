@@ -136,9 +136,23 @@ function addBookToPage(book){
         readButton.classList.add("not-read");
     }
     bookCard.appendChild(readButton)
+    readButton.addEventListener("click", () => changeReadStatus(readButton));
 
     removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.classList.add("remove-button");
     bookCard.appendChild(removeButton);
+}
+
+function changeReadStatus(readButton){
+    if(readButton.classList.contains("book-read")){
+        readButton.classList.add("not-read");
+        readButton.classList.remove("book-read");
+        readButton.textContent = "Not Read";
+    }
+    else{
+        readButton.classList.add("book-read");
+        readButton.classList.remove("not-read");
+        readButton.textContent = "Read";
+    }
 }
