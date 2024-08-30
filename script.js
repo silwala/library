@@ -142,6 +142,8 @@ function addBookToPage(book){
     removeButton.textContent = "Remove";
     removeButton.classList.add("remove-button");
     bookCard.appendChild(removeButton);
+
+    removeButton.addEventListener("click", (e) => removeBook(e));
 }
 
 function changeReadStatus(e){
@@ -155,4 +157,8 @@ function changeReadStatus(e){
         e.target.classList.remove("not-read");
         e.target.textContent = "Read";
     }
+}
+
+function removeBook(e){
+    e.target.closest(".book-card").remove();
 }
